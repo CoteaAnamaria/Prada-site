@@ -1,0 +1,1033 @@
+@import "variabile";
+@import "functii";
+
+// body
+body {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // HEADER
+  header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    max-width: 1680px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    display: flex;
+
+    // logo
+    .logo {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 130px;
+        margin-top: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    // navigation list .main-nav peste 1280
+    @media screen and (min-width: 1280px) {
+      .main-nav {
+        flex-grow: 3;
+        padding-top: 15px;
+        ul {
+          list-style: none;
+          width: auto;
+          margin-bottom: 0;
+          display: flex;
+          align-items: baseline;
+          flex-direction: row;
+          padding-left: 1.25rem;
+          padding-right: 0.9375rem;
+          padding-top: 0.0925rem;
+          li {
+            cursor: pointer;
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+              sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding-bottom: 8px;
+
+            section {
+              cursor: pointer;
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+              display: flex;
+              justify-content: center;
+
+              article {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                max-width: 105rem;
+                display: flex;
+                background-color: white;
+                margin: auto;
+                padding-top: 25px;
+                padding-left: 1.1rem;
+                padding-bottom: 10px;
+              }
+            }
+          }
+
+          li:nth-child(n + 2):nth-child(-n + 7) {
+            margin-left: 20px;
+          }
+
+          // dropdown....... GHIFTS
+          li:nth-child(1) {
+            section {
+              article {
+                // ////////////////   picture 1
+                .pic1 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+                  /* hover pe text*/
+                  .textHidePic1:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                  .textHidePic1 {
+                    @include textHidePic;
+                  }
+                }
+
+                // ////////////////   picture 2
+                .pic2 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-left: 10px;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+                  /* hover peste text */
+                  .textHidePic2:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                  .textHidePic2 {
+                    @include textHidePic;
+                  }
+                }
+                // /////////////////      list
+                ul {
+                  @include mainnavArtUl;
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+
+                // //////////////        span "x"
+                span {
+                  flex-grow: 5;
+                  text-align: end;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+          // hover pe GHIFTS ca sa apara menu
+          li:nth-child(1):hover section {
+            visibility: visible;
+          }
+
+          // dropdown ........ WOMEN
+          li:nth-child(2) {
+            section {
+              article {
+                // //////////////            list 1 with backgroud color gray
+                ul:nth-child(1) {
+                  background-color: rgb(234, 228, 228);
+                  flex-wrap: wrap;
+                }
+                ul {
+                  color: black;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  flex-grow: 1;
+                  font-size: 0.9rem;
+                  li {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    list-style: none;
+                    font-size: 0.7rem;
+                    line-height: 1.9em;
+                  }
+                }
+
+                // //////////////            list 2-end
+                ul:nth-child(n + 2):nth-child(-n + 7):hover {
+                  color: gray;
+                  li:hover {
+                    color: gray;
+                  }
+                }
+
+                // ////////////////      span= "x"
+                span {
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
+          // hover pe WOMEN ca sa apara menu
+          li:nth-child(2):hover section {
+            visibility: visible;
+          }
+
+          // dropdown ......... MEN
+          li:nth-child(3) {
+            section {
+              article {
+                // //////////////            list 1 with backgroud color gray
+                ul:nth-child(1) {
+                  background-color: rgb(234, 228, 228);
+                  flex-wrap: wrap;
+                }
+                ul {
+                  color: black;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  flex-grow: 1;
+                  font-size: 0.9rem;
+                  li {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    list-style: none;
+                    font-size: 0.7rem;
+                    line-height: 1.9em;
+                  }
+                  li:hover {
+                    color: gray;
+                  }
+                }
+                // //////////////            list 2-end
+                ul:nth-child(n + 2):nth-child(-n + 7):hover {
+                  color: gray;
+                  li:hover {
+                    color: gray;
+                  }
+                }
+
+                // ////////////////      span= "x"
+                span {
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
+          // hover pe  MEN ca sa apara menu
+          li:nth-child(3):hover section {
+            visibility: visible;
+          }
+
+          // dropdown........... BAGS
+          li:nth-child(4) {
+            section {
+              article {
+                // ////////////////   picture 1
+                .pic3 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text */
+                  .textHidePic3:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+
+                .textHidePic3 {
+                  @include textHidePic;
+                }
+                // ////////////////////    list 1
+                ul:nth-child(2) {
+                  @include mainnavArtUl;
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+
+                // ////////////////   picture 2
+                .pic4 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+                  /* hover pe text */
+                  .textHidePic4:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+                .textHidePic4 {
+                  @include textHidePic;
+                }
+
+                // ////////////////////    list 2
+                ul:nth-child(4) {
+                  margin-left: 10px;
+                  @include mainnavArtUl;
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+                // //////////////        span "x"
+                span {
+                  flex-grow: 5;
+                  text-align: end;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+          // hover pe BAGS ca sa apara menu
+          li:nth-child(4):hover section {
+            visibility: visible;
+          }
+
+          // dropdown ...........LINEA ROSSA
+          li:nth-child(5) {
+            section {
+              article {
+                // ////////////////   picture 1
+                .pic5 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+                  /* hover pe text */
+                  .textHidePic5:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+                .textHidePic5 {
+                  @include textHidePic;
+                }
+
+                // /////////////////      list 1
+                ul:nth-child(2) {
+                  @include mainnavArtUl;
+                  margin-left: 10px;
+                  margin-right: 10px;
+
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+
+                // ////////////////   picture 2
+                .pic6 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+                  /* hover pe text */
+                  .textHidePic6:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+                .textHidePic6 {
+                  @include textHidePic;
+                }
+
+                // /////////////////      list 2
+                ul:nth-child(4) {
+                  @include mainnavArtUl;
+                  margin-left: 10px;
+
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+                // //////////////        span "x"
+                span {
+                  flex-grow: 5;
+                  text-align: end;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+          // hover pe LINEA ROSSA ca sa apara menu
+          li:nth-child(5):hover section {
+            visibility: visible;
+          }
+
+          // drop ............... BEAUTY AND FRAGRANCES
+          li:nth-child(6) {
+            section {
+              article {
+                // ///////////              picture 1
+                .pic1 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+                  /* hover pe text*/
+                  .textHidePic1:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                  .textHidePic1 {
+                    @include textHidePic;
+                  }
+                }
+
+                // ////////////////       colon 2 container 1 with 2 pic
+                .container1 {
+                  display: flex;
+                  flex-direction: column;
+                  flex-wrap: wrap;
+                  max-height: 320px;
+                  max-width: 155px;
+                  margin-left: 10px;
+                  // ////            picture 1
+                  .pic2 {
+                    height: 50%;
+                    position: relative;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+                    /* hover peste text */
+                    .textHidePic2:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic2 {
+                      @include textHidePic;
+                    }
+                  }
+                  // //////                    picture 2
+                  .pic3 {
+                    position: relative;
+                    margin-top: 5px;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+                    /* hover peste text */
+                    .textHidePic3:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic3 {
+                      @include textHidePic;
+                    }
+                  }
+                }
+
+                // /////////////////                 list
+                ul:nth-child(3) {
+                  @include mainnavArtUl;
+
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+
+                // ////////////////       colon 4 container 2 with 2 pic
+                .container2 {
+                  display: flex;
+                  flex-direction: column;
+                  flex-wrap: wrap;
+                  max-height: 340px;
+                  max-width: 155px;
+                  margin-right: 10px;
+                  margin-left: 10px;
+                  // ///              picture 1
+                  .pic2 {
+                    height: 50%;
+                    position: relative;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+
+                    /* hover peste text */
+                    .textHidePic2:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic2 {
+                      @include textHidePic;
+                    }
+                  }
+                  // //////            picture 2
+                  .pic3 {
+                    position: relative;
+                    margin-top: 5px;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+                    /* hover peste text */
+                    .textHidePic3:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic3 {
+                      @include textHidePic;
+                    }
+                  }
+                }
+
+                // /////////////////                     list
+                ul:nth-child(5) {
+                  @include mainnavArtUl;
+
+                  li {
+                    @include mainnavArtUlLi;
+                  }
+                }
+              }
+              // //////////////                         span "x"
+              span {
+                flex-grow: 5;
+                text-align: end;
+                margin-right: 40px;
+              }
+            }
+          }
+          // hover pe BEAUTY AND FRAGRANCES ca sa apara menu
+          li:nth-child(6):hover section {
+            visibility: visible;
+          }
+
+          @media screen and (max-width: 1279px) {
+            ul {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    // navigation list  .main-nav sa fie ascusa sub 1280
+    @media screen and (max-width: 1279px) {
+      .main-nav {
+        display: none;
+      }
+    }
+
+    // search loop
+    div:nth-child(3) {
+      flex-grow: 2;
+      text-align: right;
+      cursor: pointer;
+      i {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        letter-spacing: 0.6em;
+        line-height: 0.8;
+      }
+    }
+
+    // drop menu peste 1280
+    @media screen and (min-width: 1280px) {
+      div:nth-child(4) {
+        display: none;
+      }
+    }
+
+    // drop menu dub 1280
+    @media screen and (max-width: 1279px) {
+      div:nth-child(4) {
+        i {
+          margin-top: 20px;
+          margin-right: 15px;
+          margin-left: 15px;
+        }
+        .dropdown {
+          background-color: white;
+          margin-top: 10px;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 3.125rem;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          overflow: hidden;
+          visibility: hidden;
+          ul {
+            width: 100%;
+            list-style-type: none;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 46px;
+            margin-left: -10px;
+            // GIFTS
+            li:nth-child(1) {
+              margin-top: 40px;
+              section {
+                max-width: 1279px;
+                position: absolute;
+                background-color: white;
+                right: 0px;
+                visibility: hidden;
+                padding-left: 0px;
+                left: 0px;
+                top: 0px;
+
+                div {
+                  max-width: 1279px;
+                  width: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  border-bottom: 1px solid lightgray;
+                }
+                img:nth-child(2) {
+                  width: 100%;
+                  height: 420px;
+                  object-position: 25% 75%;
+                  object-fit: cover;
+                }
+                img:nth-child(4) {
+                  width: 100%;
+                  height: 420px;
+                  object-position: 25% 75%;
+                  object-fit: cover;
+                }
+              }
+            }
+            // WOMEN
+            section,
+            article {
+              display: none;
+            }
+
+            //  hover pe li  WOMEN,arata section
+            li {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+
+              &:active {
+                > section {
+                  display: block;
+                  max-width: 1279px;
+                  position: absolute;
+                  background-color: white;
+                  right: 0px;
+                  padding-left: 0px;
+                  left: 0px;
+                  top: 0px;
+
+                  div:nth-child(1) {
+                    max-width: 1279px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    border-bottom: 1px solid lightgray;
+                  }
+                }
+              }
+            }
+
+            // hover pe  li  Bags, arata article
+            li {
+              li {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                &:hover {
+                  > article {
+                    display: block;
+                    max-width: 1279px;
+                    position: absolute;
+                    background-color: white;
+                    right: 0px;
+                    padding-left: 0px;
+                    left: 0px;
+                    top: 0px;
+
+                    div:nth-child(1) {
+                      max-width: 1279px;
+                      width: 100%;
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: space-between;
+                      border-bottom: 1px solid lightgray;
+                    }
+                  }
+                }
+              }
+            }
+
+            // MEN
+            li:nth-child(3) {
+              section {
+                max-width: 1279px;
+                position: absolute;
+                background-color: white;
+                right: 0px;
+                visibility: hidden;
+                padding-left: 0px;
+                left: 0px;
+                top: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // sectiune de hoover
+  div:nth-child(4):hover .dropdown {
+    visibility: visible;
+    ul {
+      // GIFTS
+      li:nth-child(1):hover {
+        section {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // MAIN
+  @media screen and (max-width: 1279px), screen and (min-width: 1280px) {
+    main {
+      max-width: 1680px;
+      margin: 0 auto;
+      height: auto;
+
+      // for all sections
+      section {
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px;
+        div {
+          h1 {
+            position: absolute;
+            z-index: 0;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: white;
+            margin-top: 30px;
+            margin-left: 30px;
+            width: 220px;
+          }
+          h4 {
+            position: absolute;
+            // max-width: 816px !important;
+            // width: 40%;
+            margin-top: 45px;
+            color: white;
+            font-size: 0.95rem;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: end;
+
+            border-bottom: 1px solid white;
+          }
+          h4:hover {
+            background-color: white;
+            color: black;
+            transition: ease-out 0.2s;
+          }
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        h1 {
+          position: absolute;
+          z-index: 0;
+          font-size: 1.7rem;
+          font-weight: 600;
+          color: white;
+          margin-top: 30px;
+          margin-left: 30px;
+          width: 220px;
+        }
+
+        a {
+          video {
+            width: 100%;
+            height: auto;
+            object-fit: fill;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+        }
+      }
+
+      // section 1 video
+      section:nth-child(1) {
+        h4 {
+          @include h4();
+        }
+        h4:hover {
+          background-color: white;
+          color: black;
+          transition: ease-out 0.2s;
+        }
+      }
+
+      //   section 2 video
+      section:nth-child(2) {
+        h4 {
+          @include h4();
+        }
+        h4:hover {
+          background-color: white;
+          color: black;
+          transition: ease-out 0.2s;
+        }
+      }
+
+      //   section 3 flex 2 pictures
+      section:nth-child(3) {
+        box-sizing: border-box;
+        padding-top: 10px !important;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        padding: 0 19px;
+
+        div:nth-child(1) {
+          padding-right: 5px;
+          h4 {
+            right: calc(80% - 400px);
+          }
+        }
+        div:nth-child(2) {
+          padding-left: 5px;
+          h4 {
+            right: calc(20% - 100px);
+          }
+        }
+      }
+
+      //   section 4 picture with 2 text ..for him /for her
+      section:nth-child(4) {
+        // Holiday Collection
+        h1 {
+          width: 520px;
+        }
+        // for her
+        h4 {
+          @include h4();
+        }
+        h4:hover {
+          background-color: white;
+          color: black;
+          transition: ease-out 0.2s;
+        }
+        // for him
+        h3 {
+          @include h4();
+          margin-left: 120px;
+        }
+        h3:hover {
+          background-color: white;
+          color: black;
+          transition: ease-out 0.2s;
+        }
+
+        img {
+          padding-left: 10px;
+          padding-right: 10px;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      //   section 5 video eye
+      section:nth-child(5) {
+        // Prada Beauty
+        h1 {
+          width: 520px;
+        }
+        // DISCOVER
+        h4 {
+          @include h4();
+        }
+        h4:hover {
+          background-color: white;
+          color: black;
+          transition: ease-out 0.2s;
+        }
+      }
+
+      //   carousel  / article PRADASPHERE_NEWS
+      article {
+        position: absolute;
+        margin-left: -120px;
+        margin-top: -335px;
+        color: white;
+        font-size: 2.6rem;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-weight: 700;
+        transform: rotate(0.75turn);
+      }
+    }
+  }
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //FOOTER
+  footer {
+    width: 100%;
+    max-width: 1680px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    // first row
+    section:nth-child(1) {
+      @include flexRowSpBtwn();
+      max-width: 90%;
+      width: 100%;
+      margin-top: 50px;
+
+      // icon
+
+      div:nth-child(1) {
+        flex-grow: 1;
+        margin-top: 10px;
+      }
+
+      //   company
+
+      div:nth-child(2) {
+        flex-grow: 1;
+        margin-top: 10px;
+        @include pFooter;
+        p {
+          @include pFooter;
+          font-weight: 700;
+        }
+        ul {
+          @include ulFooter;
+        }
+      }
+
+      //   legal
+
+      div:nth-child(3) {
+        flex-grow: 3;
+        margin-top: 10px;
+        p {
+          @include pFooter;
+          font-weight: 700;
+        }
+        ul {
+          @include ulFooter;
+          list-style: none;
+        }
+      }
+    }
+
+    // secod row
+
+    section:nth-child(2) {
+      border-top: 1px solid lightgray;
+      max-width: 1640px;
+      width: 100%;
+      height: 30px;
+      display: flex;
+
+      div:nth-child(1) {
+        padding-top: 5px;
+        width: 950px;
+        height: 30px;
+        border-right: 1px solid lightgray;
+        font-size: 11px;
+      }
+      div:nth-child(2) {
+        width: 240px;
+        height: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        border-right: 1px solid lightgray;
+
+        span:nth-child(1) {
+          font-size: 17px;
+        }
+        span:nth-child(2) {
+          font-size: 13px;
+        }
+      }
+      div:nth-child(3) {
+        width: 450px;
+        span:nth-child(1) {
+          font-size: 17px;
+        }
+        span:nth-child(2) {
+          font-size: 16px;
+          font-weight: 600;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

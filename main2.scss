@@ -1,0 +1,1391 @@
+@import "variabile";
+@import "functii";
+
+@font-face {
+  font-family: benton-sans-small;
+  src: url(https://www.prada.com/etc/designs/pradanux/clientlib-bundle-assets/resources/adb-fonts/web/BentonSansBook/BentonSansBook.woff2);
+}
+
+@font-face {
+  font-family: benton-sans-medium;
+  src: url(https://www.prada.com/etc/designs/pradanux/clientlib-bundle-assets/resources/adb-fonts/web/BentonSansMedium/BentonSansMedium.woff2);
+}
+
+@font-face {
+  font-family: benton-sans-bold;
+  src: url(https://www.prada.com/etc/designs/pradanux/clientlib-bundle-assets/resources/adb-fonts/web/BentonSansBold/BentonSansBold.woff2);
+}
+
+@font-face {
+  font-family: prada-icons-new;
+  src: url(https://www.prada.com/etc/designs/pradanux/clientlib-bundle-assets/resources/adb-fonts/icomoon-new/prada-icons.ttf?51d90w);
+}
+
+body {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  // header
+
+  header {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-bottom: 2px solid lightgray;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 0px;
+    display: flex;
+
+    // logo
+    .logo {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 130px;
+        margin-top: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
+    // .main-nav peste 1280
+    @media screen and (min-width: 1280px) {
+      .main-nav {
+        flex-grow: 3;
+        padding-top: 15px;
+        ul {
+          list-style: none;
+          width: auto;
+          margin-bottom: 0;
+          display: flex;
+          align-items: baseline;
+          flex-direction: row;
+          padding-left: 1.25rem;
+          padding-right: 0.9375rem;
+          padding-top: 0.0925rem;
+          li {
+            font-family: "Franklin Gothic Medium", "Arial Narrow", Arial,
+              sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          li:nth-child(n + 2):nth-child(-n + 7) {
+            margin-left: 20px;
+          }
+
+          // dropdown GHIFTS
+          li:nth-child(1) {
+            cursor: pointer;
+
+            section {
+              cursor: pointer;
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+
+              article {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+                margin: auto;
+                padding-top: 25px;
+                padding-left: 0.7rem;
+                padding-bottom: 10px;
+                // picture 1
+                .pic1 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text*/
+                  .textHidePic1:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                  .textHidePic1 {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    margin-left: 0px;
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.6);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    transition: 0.6s;
+                  }
+                }
+
+                // picture 2
+                .pic2 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-left: 10px;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover peste text */
+                  .textHidePic2:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                  .textHidePic2 {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    margin-left: 0px;
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.6);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    transition: 0.6s;
+                  }
+                }
+
+                // list
+                ul:nth-child(3) {
+                  text-decoration: none;
+                  list-style-type: none;
+                  margin-left: 10px;
+                  background-color: lightgray;
+                  width: 150px;
+                  display: flex;
+                  flex-direction: column;
+                  li {
+                    color: black;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 500;
+                    line-height: 30px;
+                  }
+                }
+
+                ul:nth-child(3) {
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  width: 180px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+                // span "x"
+                span {
+                  flex-grow: 5;
+                  text-align: end;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+          // hover pe GHIFTS ca sa apara menu
+          li:nth-child(1):hover section {
+            visibility: visible;
+          }
+
+          // dropdown menu WOMEN
+          li:nth-child(2) {
+            cursor: pointer;
+
+            section {
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+              article {
+                display: flex;
+                justify-content: space-evenly;
+                background-color: white;
+                margin: auto;
+                margin-left: 0px !important;
+                padding-top: 25px;
+                padding-bottom: 10px;
+                max-width: 105rem;
+                max-height: 46.875rem;
+                transition: max-height 0.8s ease;
+                position: relative;
+                height: 100%;
+                width: 100%;
+
+                ul:nth-child(1) {
+                  background-color: rgb(234, 228, 228);
+                  flex-wrap: wrap;
+                }
+                ul {
+                  color: black;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  flex-grow: 1;
+                  font-size: 0.9rem;
+                  li {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    list-style: none;
+                    font-size: 0.7rem;
+                    line-height: 1.9em;
+                  }
+                }
+                ul:nth-child(n + 2):nth-child(-n + 7):hover {
+                  color: gray;
+                  li:hover {
+                    color: gray;
+                  }
+                }
+                span {
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
+          // hover pe WOMEN ca sa apara menu
+          li:nth-child(2):hover section {
+            visibility: visible;
+          }
+
+          // dropdown menu MEN
+          li:nth-child(3) {
+            cursor: pointer;
+
+            section {
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+              article {
+                display: flex;
+                justify-content: space-evenly;
+                background-color: white;
+                margin: auto;
+                margin-left: 0px !important;
+                padding-top: 25px;
+                padding-bottom: 10px;
+                max-width: 105rem;
+                max-height: 46.875rem;
+                transition: max-height 0.8s ease;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                ul:nth-child(1) {
+                  background-color: rgb(234, 228, 228);
+                  flex-wrap: wrap;
+                }
+                ul {
+                  color: black;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  flex-grow: 1;
+                  font-size: 0.9rem;
+                  li {
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: black;
+                    list-style: none;
+                    font-size: 0.7rem;
+                    line-height: 1.9em;
+                  }
+                  li:hover {
+                    color: gray;
+                  }
+                }
+                ul:nth-child(n + 2):nth-child(-n + 7):hover {
+                  color: gray;
+                  li:hover {
+                    color: gray;
+                  }
+                }
+                span {
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
+          // hover pe  MEN ca sa apara menu
+          li:nth-child(3):hover section {
+            visibility: visible;
+          }
+
+          // dropdown BAGS
+          li:nth-child(4) {
+            cursor: pointer;
+
+            section {
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+
+              article {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+                margin: auto;
+                padding-top: 25px;
+                padding-left: 0.7rem;
+                padding-bottom: 10px;
+
+                // picture 1
+                .pic3 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text */
+                  .textHidePic3:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+
+                .textHidePic3 {
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  margin-left: 0px;
+                  position: absolute;
+                  background: rgba(0, 0, 0, 0.6);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  opacity: 0;
+                  transition: 0.6s;
+                }
+
+                ul:nth-child(2) {
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  width: 180px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+                  margin-left: 10px;
+                  margin-right: 10px;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+
+                // picture 2
+                .pic4 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text */
+                  .textHidePic4:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+
+                .textHidePic4 {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  margin-left: 0px;
+                  background: rgba(0, 0, 0, 0.6);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  opacity: 0;
+                  transition: 0.6s;
+                }
+
+                ul:nth-child(4) {
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+                  margin-left: 10px;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+                // span "x"
+                span {
+                  flex-grow: 5;
+                  text-align: end;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+          // hover pe BAGS ca sa apara menu
+          li:nth-child(4):hover section {
+            visibility: visible;
+          }
+
+          // dropdown LINEA ROSSA
+          li:nth-child(5) {
+            cursor: pointer;
+
+            section {
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+
+              article {
+                display: flex;
+                justify-content: space-between;
+                background-color: white;
+                margin: auto;
+                padding-top: 25px;
+                padding-left: 0.7rem;
+                padding-bottom: 10px;
+
+                // picture 1
+                .pic5 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text */
+                  .textHidePic5:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+
+                .textHidePic5 {
+                  width: 100%;
+                  height: 100%;
+                  top: 0;
+                  left: 0;
+                  margin-left: 0px;
+                  position: absolute;
+                  background: rgba(0, 0, 0, 0.6);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  opacity: 0;
+                  transition: 0.6s;
+                }
+
+                ul:nth-child(2) {
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  width: 180px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+                  margin-left: 10px;
+                  margin-right: 10px;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+
+                // picture 2
+                .pic6 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  margin-right: 0px !important;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text */
+                  .textHidePic6:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                }
+
+                .textHidePic6 {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  margin-left: 0px;
+                  background: rgba(0, 0, 0, 0.6);
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  opacity: 0;
+                  transition: 0.6s;
+                }
+
+                ul:nth-child(4) {
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+                  margin-left: 10px;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+                // span "x"
+                span {
+                  flex-grow: 5;
+                  text-align: end;
+                  margin-right: 40px;
+                }
+              }
+            }
+          }
+          // hover pe BAGS ca sa apara menu
+          li:nth-child(5):hover section {
+            visibility: visible;
+          }
+
+          // drop menu BEAUTY AND FRAGRANCES
+          li:nth-child(6) {
+            cursor: pointer;
+
+            section {
+              background: rgb(255, 255, 255);
+              margin-top: 10px;
+              position: fixed;
+              width: 100%;
+              top: 3.125rem;
+              left: 0;
+              right: 0;
+              transition: max-height 1s ease;
+              max-height: 46.875rem;
+              overflow: hidden;
+              visibility: hidden;
+              article {
+                display: flex;
+                background-color: white;
+                margin: auto;
+                padding-top: 25px;
+                padding-left: 0.7rem;
+                padding-bottom: 10px;
+
+                // picture 1
+                .pic1 {
+                  flex-grow: 1;
+                  position: relative;
+                  max-width: 320px;
+                  img {
+                    width: 100%;
+                    display: block;
+                  }
+
+                  /* hover pe text*/
+                  .textHidePic1:hover {
+                    opacity: 1;
+                    color: white;
+                  }
+                  .textHidePic1 {
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    margin-left: 0px;
+                    position: absolute;
+                    background: rgba(0, 0, 0, 0.6);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: 0;
+                    transition: 0.6s;
+                  }
+                }
+                .container1 {
+                  display: flex;
+                  flex-direction: column;
+                  flex-wrap: wrap;
+                  max-height: 320px;
+                  max-width: 155px;
+                  margin-left: 10px;
+                  // picture 2
+                  .pic2 {
+                    height: 50%;
+                    position: relative;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+
+                    /* hover peste text */
+                    .textHidePic2:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic2 {
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      margin-left: 0px;
+                      position: absolute;
+                      background: rgba(0, 0, 0, 0.6);
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      opacity: 0;
+                      transition: 0.6s;
+                    }
+                  }
+                  // picture 3
+                  .pic3 {
+                    position: relative;
+                    margin-top: 5px;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+
+                    /* hover peste text */
+                    .textHidePic3:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic3 {
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      margin-left: 0px;
+                      position: absolute;
+                      background: rgba(0, 0, 0, 0.6);
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      opacity: 0;
+                      transition: 0.6s;
+                    }
+                  }
+                }
+                ul:nth-child(3) {
+                  margin-left: 10px;
+                  width: 175px !important;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+                .container2 {
+                  display: flex;
+                  flex-direction: column;
+                  flex-wrap: wrap;
+                  max-height: 340px;
+                  max-width: 155px;
+                  margin-right: 10px;
+                  margin-left: 10px;
+                  // picture 2
+                  .pic2 {
+                    height: 50%;
+                    position: relative;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+
+                    /* hover peste text */
+                    .textHidePic2:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic2 {
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      margin-left: 0px;
+                      padding-left: 35px;
+                      position: absolute;
+                      background: rgba(0, 0, 0, 0.6);
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      opacity: 0;
+                      transition: 0.6s;
+                    }
+                  }
+                  // picture 3
+                  .pic3 {
+                    position: relative;
+                    margin-top: 5px;
+                    img {
+                      width: 100%;
+                      display: block;
+                    }
+
+                    /* hover peste text */
+                    .textHidePic3:hover {
+                      opacity: 1;
+                      color: white;
+                    }
+                    .textHidePic3 {
+                      width: 100%;
+                      height: 100%;
+                      top: 0;
+                      left: 0;
+                      margin-left: 0px;
+                      position: absolute;
+                      background: rgba(0, 0, 0, 0.6);
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      opacity: 0;
+                      transition: 0.6s;
+                    }
+                  }
+                }
+                ul:nth-child(5) {
+                  width: 175px !important;
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: column;
+                  background-color: rgb(234, 228, 228);
+                  padding-left: 0px;
+                  line-height: 23px;
+                  font-size: 0.9rem;
+
+                  li {
+                    font-size: 0.7rem;
+                    line-height: 23px;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                  }
+                }
+              }
+              // span "x"
+              span {
+                flex-grow: 5;
+                text-align: end;
+                margin-right: 40px;
+              }
+            }
+          }
+          // hover pe BEAUTY AND FRAGRANCES ca sa apara menu
+          li:nth-child(6):hover section {
+            visibility: visible;
+          }
+
+          @media screen and (max-width: 1279px) {
+            ul {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    // .main-nav sa fie ascusa sub 1280
+    @media screen and (max-width: 1279px) {
+      .main-nav {
+        display: none;
+      }
+    }
+
+    // search loop
+    div:nth-child(3) {
+      flex-grow: 2;
+      text-align: right;
+      cursor: pointer;
+      i {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        letter-spacing: 0.6em;
+        line-height: 0.8;
+      }
+    }
+
+    // drop menu peste 1280
+    @media screen and (min-width: 1280px) {
+      div:nth-child(4) {
+        display: none;
+      }
+    }
+
+    // drop menu dub 1280
+    @media screen and (max-width: 1279px) {
+      div:nth-child(4) {
+        i {
+          margin-top: 20px;
+          margin-right: 15px;
+          margin-left: 15px;
+        }
+        .dropdown {
+          background-color: white;
+          margin-top: 10px;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 3.125rem;
+          left: 0;
+          right: 0;
+          display: flex;
+          justify-content: start;
+          align-items: start;
+          overflow: hidden;
+          // visibility: hidden;
+          ul {
+            width: 100%;
+            list-style-type: none;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 46px;
+            margin-left: -10px;
+            // GIFTS
+            li:nth-child(1) {
+              margin-top: 40px;
+              section {
+                max-width: 1279px;
+                position: absolute;
+                background-color: white;
+                right: 0px;
+                visibility: hidden;
+                padding-left: 0px;
+                left: 0px;
+                top: 0px;
+
+                div {
+                  max-width: 1279px;
+                  width: 100%;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  border-bottom: 1px solid lightgray;
+                }
+                img:nth-child(2) {
+                  width: 100%;
+                  height: 420px;
+                  object-position: 25% 75%;
+                  object-fit: cover;
+                }
+                img:nth-child(4) {
+                  width: 100%;
+                  height: 420px;
+                  object-position: 25% 75%;
+                  object-fit: cover;
+                }
+              }
+            }
+            // WOMEN
+            section,
+            article {
+              display: none;
+            }
+
+            //  hover pe li  WOMEN,arata section
+            li {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+
+              &:hover {
+                > section {
+                  display: block;
+                  max-width: 1279px;
+                  position: absolute;
+                  background-color: white;
+                  right: 0px;
+                  padding-left: 0px;
+                  left: 0px;
+                  top: 0px;
+
+                  div:nth-child(1) {
+                    max-width: 1279px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    border-bottom: 1px solid lightgray;
+                  }
+                }
+              }
+            }
+
+            // hover pe  li  Bags, arata article
+            li {
+              li {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                &:hover {
+                  > article {
+                    display: block;
+                    max-width: 1279px;
+                    position: absolute;
+                    background-color: white;
+                    right: 0px;
+                    padding-left: 0px;
+                    left: 0px;
+                    top: 0px;
+
+                    div:nth-child(1) {
+                      max-width: 1279px;
+                      width: 100%;
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: space-between;
+                      border-bottom: 1px solid lightgray;
+                    }
+                  }
+                }
+              }
+            }
+
+            // MEN
+            li:nth-child(3) {
+              section {
+                max-width: 1279px;
+                position: absolute;
+                background-color: white;
+                right: 0px;
+                visibility: hidden;
+                padding-left: 0px;
+                left: 0px;
+                top: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // sectiune de hoover
+    div:nth-child(4):hover .dropdown {
+      visibility: visible;
+
+      ul {
+        // GIFTS
+        li:nth-child(1):hover {
+          section {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+  main {
+    margin: 0 auto;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    h5 {
+      margin-top: 15px;
+    }
+    section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+      margin-top: 30px;
+      p {
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: -0.02em;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+
+      div {
+        .article-gol-deBuline {
+          margin-top: -18px !important;
+
+          .span-de-i {
+            display: inline-block;
+            width: 6% !important;
+            i {
+              font-size: 0.6rem !important;
+            }
+          }
+        }
+      }
+      div:nth-child(1) {
+        width: 100%;
+        grid-area: 1 / 1 / 5 / 3;
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          source {
+            width: 100%;
+          }
+        }
+      }
+
+      div:nth-child(n + 2):nth-child(-n + 11) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        span {
+          width: 100%;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      div:nth-child(2) {
+        grid-area: 1 / 3 / 3 / 4;
+      }
+      div:nth-child(3) {
+        grid-area: 1 / 4 / 3 / 5;
+        // div{
+        //   i{
+        //     color:red;
+        //   }
+        // }
+      }
+      div:nth-child(4) {
+        grid-area: 3 / 3 / 5 / 4;
+      }
+      div:nth-child(5) {
+        grid-area: 3 / 4 / 5 / 5;
+      }
+      div:nth-child(6) {
+        grid-area: 5 / 1 / 6 / 2;
+      }
+      div:nth-child(7) {
+        grid-area: 5 / 2 / 6 / 3;
+      }
+      div:nth-child(8) {
+        grid-area: 5 / 3 / 6 / 4;
+      }
+      div:nth-child(9) {
+        grid-area: 5 / 4 / 6 / 5;
+      }
+      div:nth-child(10) {
+        grid-area: 6 / 1 / 8 / 2;
+      }
+      div:nth-child(11) {
+        grid-area: 6 / 2 / 8 / 3;
+      }
+
+      div:nth-child(12) {
+        width: 100%;
+        height: 100%;
+        grid-area: 6 / 3 / 8 / 5;
+        position: relative;
+        overflow: hidden;
+        span {
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+          }
+        }
+      }
+      div:nth-child(n + 13):nth-child(-n + 16) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        span {
+          width: 100%;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      div:nth-child(13) {
+        grid-area: 8 / 1 / 9 / 2;
+      }
+      div:nth-child(14) {
+        grid-area: 8 / 2 / 9 / 3;
+      }
+      div:nth-child(15) {
+        grid-area: 8 / 3 / 9 / 4;
+      }
+      div:nth-child(16) {
+        grid-area: 8 / 4 / 9 / 5;
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    max-width: 1680px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .line-before-footer {
+      width: 100%;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid lightgray;
+      border-bottom: 1px solid lightgray;
+    }
+
+    // first row
+    section:nth-child(2) {
+      @include flexRowSpBtwn();
+      width: 100%;
+      margin-top: 50px;
+      margin-bottom: 20px;
+
+      article {
+        flex-grow: 1;
+        margin-top: 10px;
+        $primary: #11998e;
+        $secondary: #38ef7d;
+        $white: #fff;
+        .form__group {
+          position: relative;
+          padding: 15px 0 0;
+          margin-top: 10px;
+          width: 100%;
+          i {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            right: 0px;
+            text-align-last: right;
+            font-size: 1.5rem;
+          }
+        }
+
+        .form__field {
+          font-family: inherit;
+          width: 100%;
+          border: 0;
+          border-bottom: 1px solid black;
+          outline: 0;
+          font-size: 1.3rem;
+          color: darkgray;
+          padding: 10px 0;
+          background: transparent;
+          transition: border-color 0.2s;
+
+          &::placeholder {
+            color: transparent;
+          }
+
+          &:placeholder-shown ~ .form__label {
+            font-size: 1.3rem;
+            cursor: text;
+            top: 20px;
+          }
+        }
+
+        .form__label {
+          position: absolute;
+          top: 0;
+          display: block;
+          transition: 0.2s;
+          font-size: 0.8rem !important;
+          color: black;
+        }
+
+        .form__field:focus {
+          ~ .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: black;
+            font-weight: 400;
+          }
+          padding-bottom: 4px;
+          font-weight: 500;
+          border-width: 1px;
+        }
+        /* reset input */
+        .form__field {
+          &:required,
+          &:invalid {
+            box-shadow: none;
+          }
+        }
+
+        div:nth-child(2) {
+          width: 60%;
+          display: flex;
+          justify-content: space-around;
+          align-items: flex-start;
+        }
+      }
+
+      //   company
+
+      div:nth-child(2) {
+        flex-grow: 1;
+        margin-top: 10px;
+        @include pFooter;
+        p {
+          @include pFooter;
+          font-weight: 700;
+        }
+        ul {
+          @include ulFooter;
+        }
+      }
+
+      //   legal
+
+      div:nth-child(3) {
+        flex-grow: 3;
+        margin-top: 10px;
+        p {
+          @include pFooter;
+          font-weight: 700;
+        }
+        ul {
+          @include ulFooter;
+          list-style: none;
+        }
+      }
+    }
+
+    // secod row
+
+    section:nth-child(3) {
+      border-top: 1px solid lightgray;
+      max-width: 1640px;
+      width: 100%;
+      height: 30px;
+      padding-top: 10px;
+      display: flex;
+
+      div:nth-child(1) {
+        padding-top: 5px;
+        width: 950px;
+        height: 30px;
+        border-right: 1px solid lightgray;
+        font-size: 11px;
+      }
+      div:nth-child(2) {
+        width: 240px;
+        height: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        border-right: 1px solid lightgray;
+
+        span:nth-child(1) {
+          font-size: 17px;
+        }
+        span:nth-child(2) {
+          font-size: 13px;
+        }
+      }
+      div:nth-child(3) {
+        width: 450px;
+        span:nth-child(1) {
+          font-size: 17px;
+        }
+        span:nth-child(2) {
+          font-size: 16px;
+          font-weight: 600;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
